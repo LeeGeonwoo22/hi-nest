@@ -1,16 +1,17 @@
 import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
 
 @Controller('')
 export class AppController {
+  constructor(private readonly appService: AppService) {}
   @Get()
-  home() {
-    return 'Welcome to my Movie API';
+  home(): string {
+    return this.appService.home()
   }
-// url 'hello' 를 가져온다
-// `/hello` 가 sayHello 함수를 실행한다.
 
   @Get(`/hello`)
   sayHello(): string {
-    return 'Hello everyone';
+    // 일부러 함수명을 다르게 지었음
+    return this.appService.Hello();
   }
 }
