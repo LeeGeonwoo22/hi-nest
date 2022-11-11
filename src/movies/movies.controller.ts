@@ -20,7 +20,8 @@ export class MoviesController {
   getAll(): Movie[] {
     return this.moviesService.getAll();
   }
-
+  // Get과 @Parm이 요구하는 것이 같아야 한다.
+  // @Param('') 받아올 것/ 타입
   @Get(':id')
   getOne(@Param('id') movieId: number): Movie {
     console.log(' transform 변환 : ', typeof movieId);

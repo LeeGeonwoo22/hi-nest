@@ -4,6 +4,7 @@ import { UpdateMovieDto } from './dto/update.movie.dto';
 import { Movie } from './entities/movie.entity';
 
 @Injectable()
+// Moive 배열 형식은 entity를 통해 지정해준다. 
 export class MoviesService {
   private movies: Movie[] = [];
 
